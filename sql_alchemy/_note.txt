@@ -1,0 +1,10 @@
+Using SQLModel to work with a database involves three simple steps:
+
+1. **Define Models**: Create Python classes that represent your database tables. Each class has attributes that map to columns in the table.
+
+2. **Create the Database**: Use SQLModel to automatically generate the database tables from your models.
+
+3. **Interact with the Database**: Use SQLModel to perform database operations like inserting, querying, updating, and deleting records using Python code.
+
+This process lets you work with your database in a Pythonic way, without needing to write SQL queries directly.
+
