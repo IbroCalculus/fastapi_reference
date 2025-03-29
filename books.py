@@ -1,9 +1,11 @@
 import time
 
 from fastapi import FastAPI, HTTPException, Body
+from pydantic import BaseModel
 
 app = FastAPI()
 
+list_of_books = []
 
 @app.get('/')
 async def home():
@@ -41,3 +43,16 @@ async def create_book(new_book_name = Body()):
     BOOKS.append(new_book_name)
     return BOOKS
 
+# ======= ALTERNATIVE TO THE ABOVE IS USING A PYDANTIC BASEMODEL AS SHOWN BELOW ============
+
+class Book(BaseModel):
+    title: str
+    author: str
+    category: str
+
+
+# http://127.0.0.1:8000/books/create_book. IN BODY: {"title": "Helmet Island", "author": "King Bouhad", "category": "Monarchy"}
+@app.post('/books/create_book')
+async def create_book(new_book_name: Book):
+    BOOKS.append(new_book_name.model_dump())
+    return BOOKS

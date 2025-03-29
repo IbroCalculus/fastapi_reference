@@ -12,6 +12,10 @@
 # Open your browser at http://127.0.0.1:8000/docs   -> To get the auto documentation of my API Using Swagger UI
 # Open your browser at http://127.0.0.1:8000/redoc  -> Using Redoc
 
+# ALTERNATIVE RUN COMMANDS (Using FastAPI CLI. NB: Using Uvicorn above is the recommended)
+# fastapi dev main.py --port 8002       (In development mode)
+# fastapi run main.py --port 8002       (In production mode)
+
 
 '''
     ----------------- To change port from 8080; do as follows at the bottom of the file: -----------------
